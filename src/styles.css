@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    padding: 56px 0;
+    background: #fafafa !important;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 13px;
+}
+  .font-bold{
+    font-weight: 800
+  }
+  .margin-0{
+    margin:0
+  }
+  .font-semi-bold{
+    font-weight: 600;
+  }
+  .support{
+    position: fixed;
+    background: #1d6bd9 url(/assets/support.png) no-repeat;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    bottom: 4%;
+    right: 4%;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 11px 17px 9px 46px;
+    background-size: 21px;
+    background-position: 16px center;
+  }
+  .btn {
+    color: #fff;
+    background-color: #1d6bd9 !important;
+    border-color: #1d6bd9;
+}
+
+  @media (max-width: 480px){
+.support {
+  padding: 27px 9px 14px 46px;
+}
+.m-hide{
+  display: none
+}
+}

@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="container pt-4">
+
+  <div class="row">
+    <div class="col-md-9">
+      <div id="ledger_info">
+        <div class="row">
+          <div class="col"><h4 class="heading font-bold">Ledger</h4></div>
+          <div class="col">
+            <select id="filter" (change)="fetchData($event.target.value)">
+              <option value="month" selected>Last 30 days</option>
+              <option value="week">Last week</option>
+              <option value="year">Last Year</option>
+            </select>
+          </div>
+        </div>
+        <ng-template #blankData>
+            <span>-</span>
+        </ng-template>
+          <div class="shadow mt-3 table-responsive br-8">
+          <table class='table' id="ledgers">
+            <thead>
+              <tr>
+                <th>Particulars</th>
+                <th>Credit</th>
+                <th>Debit</th>
+                <th>Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let ledger of ledgers;">
+                <td>
+                  <strong class="text_ellipsis" title="{{ledger.particular}}">{{ledger.particular}}</strong>
+                  <div class="text-muted transaction_date"><small>{{ledger.transaction_date| date:'d MMM y'}}, {{ledger.transaction_date | date:'shortTime'}}	</small></div>
+                </td>
+                <td>
+                    <span *ngIf="ledger.is_debit === 0; else blankData" class="text-success">
+                        + {{ledger.transaction_amount}}
+                    </span>
+                </td>
+                <td>
+                  <span *ngIf="ledger.is_debit; else blankData" class="text-danger">
+                      - {{ledger.transaction_amount}}
+                  </span>
+                </td>
+                <td>
+                  <span class="balance">{{ledger.balance_amount}}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div id="balance_info">
+        <h4 class="heading font-bold">Balance Info</h4>
+        <app-card cardHeading="Available Balance" id="available_balance" [amount]="balanceInfo.available_balance"></app-card>
+        <app-card cardHeading="Total Credited" [amount]="balanceInfo.total_credited" id="total_credited"></app-card>
+        <app-card cardHeading="Total Debited" [amount]="balanceInfo.total_debited" id="total_debited"></app-card>
+        <a href="#" class="d-none d-block btn btn-primary btn-md text-uppercase font-semi-bold">
+            Spend Tokens
+          </a>
+      </div>
+    </div>
+
+  </div>
+  <div class="support"><span class="m-hide">Support</span></div>  
+</div>  

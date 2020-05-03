@@ -1,0 +1,73 @@
+#filter{
+    background: #fcf7ef;
+    border: 1px solid #f4ce42;
+    border-radius: 4px;
+    padding: 7px;
+    text-transform: uppercase;
+    font-weight: bold;
+    float: right;
+}
+#ledgers{
+    background: #fff;
+    margin-bottom: 0rem;
+}
+.br-8{
+    border-radius: 8px;
+}
+
+.text_ellipsis {
+    white-space: nowrap;
+    width: 150px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+}
+.text-success{
+  color: #80d427
+}
+.balance{
+    background: #f5f5ff url(/assets/dollar.png);
+    border: 1px solid #8bb1ec;
+    border-radius: 4px;
+    padding: 3px 12px 3px 25px;
+    color: blue;
+    font-weight: 600;
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    min-width: 65px;
+    display: inline-block
+}
+.font-bold{
+    font-weight: 800
+  }
+.transaction_date{
+    position: relative;
+    padding-left: 17px;
+}
+.transaction_date:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background: url(/assets/business.png) no-repeat;
+    background-size: 13px;
+    background-position: left center;
+}
+.table td, .table th {
+    vertical-align: middle;
+}
+.shadow {
+  box-shadow: 0 0rem 0.75rem 0 rgba(58,59,69,.09)!important;
+  padding: 5px 10px 0 10px;
+  background: #fff
+}
+.table th {
+    border-top: 0px solid #dee2e6;
+}

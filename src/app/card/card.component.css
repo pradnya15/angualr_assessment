@@ -1,0 +1,54 @@
+
+.amount{
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+.heading{
+    font-weight: 400;
+  }
+  #available_balance{
+    background: #f9e6f3
+  }
+  #total_credited{
+    background: #d4f4e7
+  }
+#total_debited{
+    background: #f3c0c1
+  }
+  #available_balance .icon{
+    background: #f56bc7 url(/assets/dollar-white.png);
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#total_credited .icon{
+    background: #48d49f url(/assets/dollar-white.png);
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+#total_debited .icon{
+    background: #e45756 url(/assets/dollar-white.png);
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .icon{
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 42px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .margin-0{
+    margin:0
+  }
+  .card{
+    border: 0px !important;
+    border-radius: 6px
+  }
