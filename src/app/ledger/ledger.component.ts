@@ -9,26 +9,28 @@ import { Ledger } from '../service/ledger';
 })
 export class LedgerComponent implements OnInit {
 
+  interval = "month"
   ledgers:Ledger[];
   balanceInfo:object = {
     "available_balance": 0,
     "total_credited": 0,
     "total_debited": 0
   };
-  ledgerObj:object = {
-    "user_id": 27,
-    "interval": "month"
-  };
+  ledgerObj:object = null
   
   constructor(private apiService:ApiService) {  }
  
   ngOnInit() {
-    this.fetchData(this.ledgerObj.interval)
+    this.fetchData(this.interval)
   }
  
   fetchData(interval:string) {
     
-    this.ledgerObj.interval = interval;
+    this.ledgerObj = {
+      "user_id": 27,
+      "interval": interval
+    };
+    
     this.apiService.fetchLedgers(this.ledgerObj)
       .subscribe(data => {
         this.balanceInfo = {

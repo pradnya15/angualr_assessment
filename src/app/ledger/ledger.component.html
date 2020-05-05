@@ -7,8 +7,8 @@
         <div class="row">
           <div class="col"><h4 class="heading font-bold">Ledger</h4></div>
           <div class="col">
-            <select id="filter" (change)="fetchData($event.target.value)">
-              <option value="month" selected>Last 30 days</option>
+            <select id="filter" (change)="fetchData($event.target.value)" [value]="interval">
+              <option value="month">Last 30 days</option>
               <option value="week">Last week</option>
               <option value="year">Last Year</option>
             </select>
