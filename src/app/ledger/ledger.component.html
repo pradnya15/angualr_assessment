@@ -31,7 +31,7 @@
               <tr *ngFor="let ledger of ledgers;">
                 <td>
                   <strong class="text_ellipsis" title="{{ledger.particular}}">{{ledger.particular}}</strong>
-                  <div class="text-muted transaction_date"><small>{{ledger.transaction_date| date:'d MMM y'}}, {{ledger.transaction_date | date:'shortTime'}}	</small></div>
+                  <div class="text-muted transaction_date"><small>{{ledger.transaction_date | formatdate}}	</small></div>
                 </td>
                 <td>
                     <span *ngIf="ledger.is_debit === 0; else blankData" class="text-success">
@@ -46,6 +46,9 @@
                 <td>
                   <span class="balance">{{ledger.balance_amount}}</span>
                 </td>
+              </tr>
+              <tr ng-if="ledgers.length == 0">
+                <td colspan="4" class="text-center">No Records</td>
               </tr>
             </tbody>
           </table>

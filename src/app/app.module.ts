@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LedgerComponent } from './ledger/ledger.component';
 import { CardComponent } from './card/card.component';
+import { FormatdatePipe } from './formatdate.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LedgerComponent,
-    CardComponent
+    CardComponent,
+    FormatdatePipe
   ],
   imports: [
     BrowserModule,
